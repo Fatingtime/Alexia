@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/index.css">
+	<title>Document</title>
+</head>
+
+<body>
+	<main>
+		<div class="main">
+			<div class="img" id="img">
+				<img src="./images/1.jpg" alt="" class="banner">
+			</div>
+			<div class="next">
+				<img src="./images/p1.png" alt="">
+			</div>
+			<div class="pre">
+				<img src="./images/n1.png" alt="">
+			</div>
+		</div>
+	</main>
+	<script>
+		// 获取所有相关元素
+		const banner = document.querySelector('.banner');
+		const imgContainer = document.getElementById('img');
+		const nextButton = document.querySelector('.next');
+		const preButton = document.querySelector('.pre');
+
+
+		const images = [
+			'./images/1.jpg', './images/2.jpg', './images/3.jpg', './images/4.jpg',
+			'./images/5.jpg', './images/6.jpg', './images/7.jpg', './images/8.jpg'
+		];
+		let currentIndex = 0; // 当前图片的索引
+
+		nextButton.addEventListener('click', () => {
+			if (currentIndex === 7) {
+				window.location.href = './alart.html'
+				return 
+			}
+			currentIndex++
+			banner.src = images[currentIndex]
+
+		})
+
+		preButton.addEventListener('click', () => {
+			if (currentIndex === 7) {
+				window.location.href = './alart.html'
+				return
+			}
+			currentIndex++
+			banner.src = images[currentIndex]
+		})
+
+	</script>
+</body>
+
+</html>
